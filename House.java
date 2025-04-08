@@ -7,14 +7,14 @@ public class House extends Building implements HouseRequirements{
   private int nResidents; 
   private ArrayList<Student> students;
   private boolean hasElevator;
-  /*
+  /**
    * overloaded constructor with name, address
    * @param String name, String address, nFloors
    */
    public House(String name,String address){
     this(name,address,4,false);
   }
-  /*
+  /**
    * full constructor
    * @param String name, String address, int nFloors
    */
@@ -26,23 +26,23 @@ public class House extends Building implements HouseRequirements{
     this.hasElevator=hasElevator;
     System.out.println("You have built a house: 🏠"); 
   }
-  /*
-   * hasDiningRoom()
+  /**
+   * hasDiningRoom(), check if the house has a dining room
    * @param none
    * @return boolean value
    */
   public boolean hasDiningRoom(){
     return this.hasDiningRoom;
   }
-  /*
-   * nResidents()
+  /**
+   * nResidents(), get the number of residents in the house
    * @return int nResidents
    */
   public int nResidents(){
     return this.nResidents;
   }
-  /*
-   * moveIn(Student s)
+  /**
+   * moveIn(Student s), add a resident (Student class object)
    * @param Student s
    */
   public void moveIn(Student s){
@@ -51,7 +51,7 @@ public class House extends Building implements HouseRequirements{
     // modify residents number
     this.nResidents+=1;
   }
-  /* moveOut(Student s)
+  /** moveOut(Student s), remove a resident
    * @param Student s
    * @return Student s
    */
@@ -66,7 +66,7 @@ public class House extends Building implements HouseRequirements{
       throw new RuntimeException("Error: student not found.");
     }
   }
-  /* isResident(Student s)
+  /** isResident(Student s), check if a Student is a resident
    * @param Student s
    * @return boolean value
    */
@@ -77,7 +77,7 @@ public class House extends Building implements HouseRequirements{
       return false;
     }
   }
-  /*
+  /**
    * overloaded method moveIn(), move in all the students contained in an ArrayList
    * @param ArrayList<Student> students
    * @return none
@@ -87,7 +87,7 @@ public class House extends Building implements HouseRequirements{
       this.moveIn(students.get(i));
     }
   }
-  /*
+  /**
    * overriden method goToFloor(), check if there is an elevator
    * @param int floorNum
    * @return none
@@ -101,7 +101,7 @@ public class House extends Building implements HouseRequirements{
     }
     super.goToFloor(floorNum);
   }
-  /*
+  /**
    * overriden showOptions(), added the methods specific to the House class
    */
   public void showOptions(){

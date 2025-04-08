@@ -87,14 +87,15 @@ public class Cafe extends Building implements CafeRequirements{
     public void showOptions() {
         System.out.println("Available options at " + this.name + ":\n + enter() \n + exit() \n + goUp() \n + goDown()\n + goToFloor(n)\n + sellCoffee()");
     }
-    
+    /**
+     * overriden method goToFloor(), customers cannot go to floors other than 1
+     * @param int floorNum
+     * @return none
+     */
     public void goToFloor(int floorNum){
         if(floorNum!=1){
             throw new RuntimeException("You are not authorized to go to other floors.");
         }
-    }
-    public int getCoffeeOunces(){
-        return(this.nCoffeeounces);
     }
     public static void main(String[] args) {
         Cafe ccCafe=new Cafe("ccCafe","1 Chapin Way",1);

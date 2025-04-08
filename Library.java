@@ -15,7 +15,7 @@ public class Library extends Building implements LibraryRequirements{
   public Library(String name, String address){
     this(name,address,1);
   }
-  /*
+  /**
    * full constructor
    */
   public Library(String name,String address,int nFloors) {
@@ -24,13 +24,13 @@ public class Library extends Building implements LibraryRequirements{
     System.out.println("You have built a library: 📖");
   }
   /**
-   * addTitle(String title)
+   * addTitle(String title), adds a key to the hashtable
    * @ param String title
    */
   public void addTitle(String title){
     this.collection.put(title,true);
   }
-  /*
+  /**
    * overloaded addTitle(), allows to add an ArrayList of titles
    * @param ArrayList<String> titles
    * @return none
@@ -40,8 +40,8 @@ public class Library extends Building implements LibraryRequirements{
       this.addTitle(titles.get(i));
     }
   }
-  /*
-   * removeTitle(String title)
+  /**
+   * removeTitle(String title), remove a key from the hashtable
    * @param String title
    * @return title
    */
@@ -54,7 +54,7 @@ public class Library extends Building implements LibraryRequirements{
       throw new RuntimeException("Error: title not found.");
     }
   }
-  /* checkOut(String title)
+  /** checkOut(String title), change the value of the hashtable reference to false
    * @param String title
    */
   public void checkOut(String title){
@@ -117,7 +117,7 @@ public class Library extends Building implements LibraryRequirements{
     }
     return true;
   }
-  /*
+  /**
    * overriden showOptions(), include the methods specific to the Library class
    */
   public void showOptions(){
