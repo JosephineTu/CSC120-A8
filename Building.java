@@ -84,6 +84,13 @@ public class Building {
     public void goDown() {
         this.goToFloor(this.activeFloor - 1);
     }
+    public void goDown(boolean basement){
+        if(basement==true && this.nFloors>1 && this.activeFloor==1){
+            System.out.println("You are now in the basement of" + this.name);
+        } else{
+            System.out.println("You cannot go to the basement of" + this.name);
+        }
+    }
 
     public void showOptions() {
         System.out.println("Available options at " + this.name + ":\n + enter() \n + exit() \n + goUp() \n + goDown()\n + goToFloor(n)");
